@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.box {
+				width: 300px;
+				height: 300px;
+				border: 5px solid brown;
+			}
+			
+			.burlywood {
+				background-color: burlywood;
+			}
+			
+			.yellow {
+				background-color: yellow;
+			}
+			
+			.green {
+				background-color: green;
+			}
+			
+			.pink {
+				background-color: pink;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="box burlywood"></div>
+		<script type="text/javascript">
+			var box = document.querySelector(".box")
+
+			box.onclick = function() {
+				if(box.className == "box burlywood") {
+					box.className = "pink box"
+				} else if(box.className == "pink box") {
+					box.className = "green box"
+				} else if(box.className == "green box") {
+					box.className = "yellow box"
+				} else if(box.className == "yellow box") {
+					box.className = "box burlywood"
+				}
+			}
+		</script>
+	</body>
+
+</html>
