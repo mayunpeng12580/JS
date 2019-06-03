@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<ol>
+			<li>《活着》</li>
+			<li>《骆驼祥子》</li>
+			<li>《追风筝的人》</li>
+			<li>《围城》</li>
+		</ol>
+		<input type="text" class="add_Book" /><button class="add">增加</button>
+		<br />
+		<input type="number"  class="no_book"/><button class="no">删除</button>
+		<script type="text/javascript">
+			var add_Book=document.querySelector(".add_Book")
+			var add=document.querySelector(".add")
+			var ol=document.querySelector("ol")
+			var no=document.querySelector(".no")
+			var no_book=document.querySelector(".no_book")
+			
+			
+			add.onclick=function(){
+				var newLi=document.createElement("li")
+				newLi.innerText='《'+add_Book.value+'》'
+				ol.appendChild(newLi)
+				add_Book.value=""
+			}
+			
+			no.onclick=function(){
+				
+				ol.removeChild(ol.children[no_book.value-1])
+				
+			}
+			
+			
+		</script>
+	</body>
+</html>
