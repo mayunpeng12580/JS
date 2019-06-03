@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var arr=[112,55,3,88,52,522,3652,66,32]
+			var max=0
+			for (var i=1;i<arr.length;i++) {
+				for (var j=0;j<arr.length-i;j++) {
+					if (arr[j]>arr[j+1]) {
+						max=arr[j];
+						arr[j]=arr[j+1];
+						arr[j+1]=max
+					}
+				}
+			}
+			
+			document.write(arr)
+		</script>
+	</body>
+</html>
