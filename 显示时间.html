@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+
+		<h1 style="font-size: 50px;text-align: center;"></h1>
+
+		<script type="text/javascript">
+			var h1 = document.getElementsByTagName("h1")
+
+			setInterval(function() {
+				var now = new Date()
+				var now_Hours = now.getHours()
+				var now_Minutes = now.getMinutes()
+				var now_Seconds = now.getSeconds()
+
+				now_Hours = now_Hours > 9 ? now_Hours : "0" + now_Hours
+				now_Minutes = now_Minutes > 9 ? now_Minutes : "0" + now_Minutes
+				now_Seconds = now_Seconds > 9 ? now_Seconds : "0" + now_Seconds
+
+				h1[0].innerText = now_Hours + ":" + now_Minutes + ":" + now_Seconds
+			}, 1000)
+		</script>
+
+	</body>
+
+</html>
