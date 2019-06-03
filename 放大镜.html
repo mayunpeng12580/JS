@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding:0;
+			}
+			
+			.box{
+				width: 200px;
+				height: 200px;
+				background-image: url(img/Koala.jpg);
+				background-size: 200px 200px;
+				border: 1px solid red;
+				position: relative;
+			}
+			
+			.glass{
+				width: 50px;
+				height: 50px;
+				background-color: #008B8B;
+				opacity: 0.5;
+				display: none;
+				position: absolute;
+				top: 0;
+				left: 0;
+			}
+			
+			.demo{
+				width: 200px;
+				height: 200px;
+				border: 2px solid royalblue;
+				background-image: url(img/Koala.jpg);
+				background-size: 800px 800px;
+				display: none;
+			}
+		</style>
+		
+	</head>
+	<body>
+		<div class="box">
+			<div class="glass">
+			</div>
+		</div>
+		<div class="demo"></div>
+		
+		<script type="text/javascript">
+			var box=document.querySelector(".box")
+			var glass=document.querySelector(".glass")
+			var demo=document.querySelector(".demo")
+			
+			
+			box.onmouseover=function(){
+				glass.style.display="block";
+				demo.style.display="block"
+			}
+			
+			box.onmouseout=function(){
+				glass.style.display="none"
+				demo.style.display="none"
+			}
+			
+			box.onmousemove=function(e){
+				var x=e.offsetX-25;
+				var y=e.offsetY-25;
+
+				x=x<0?0:x;
+				x=x>150?150:x;
+				y=y<0?0:y;
+				y=y>150?150:y;
+				
+				glass.style.top=y+'px';
+				glass.style.left=x+'px';
+				
+				demo.style.backgroundPositionX=-4*x+"px"
+				demo.style.backgroundPositionY=-4*y+"px"
+			}
+			
+			
+		</script>
+	
+	</body>
+</html>
