@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+				list-style: none;
+			}
+			
+			.container{
+				width: 300px;
+				height: 200px;
+				border: 5px solid chartreuse;
+				position: relative;
+				overflow: hidden;
+			}
+			
+			ul{
+				width: 1200px;
+				height: 200px;
+				position: absolute;
+				top: 0;
+				left: 0;
+			}
+			
+			li{
+				width: 300px;
+				height: 200px;
+				float: left;
+			}
+			
+			img{
+				width: 300px;
+				height: 200px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<ul>
+				<li><img src="img/Jellyfish.jpg" /></li>
+				<li><img src="img/Koala.jpg" /></li>
+				<li><img src="img/Lighthouse.jpg" /></li>
+				<li><img src="img/Penguins.jpg" /></li>
+			</ul>
+		</div>
+		
+		<script type="text/javascript">
+			var ul=document.querySelector("ul")
+			var index=0
+			setInterval(function(){
+				index=(index+1)%4
+				ul.style.left=index*-300+"px"
+			},2000)
+			
+			
+			
+			
+		</script>
+		
+	</body>
+</html>
