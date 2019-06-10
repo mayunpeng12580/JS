@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			h1{
+				width: 100px;
+				height: 100px;
+			}
+			
+			.btn{
+				width: 200px;
+				height: 30px;
+				text-align: center;
+				line-height: 30px;
+				opacity: 0.8;
+				position: fixed;
+				right: 10%;
+				bottom: 5%;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>11111</h1>
+		<h1>222222</h1>
+		<h1>3333333</h1>
+		<h1>4444444</h1>
+		<h1>55555555</h1>
+		<h1>6666666</h1>
+		<h1>77777777</h1>
+		<h1>888888888</h1>
+		<h1>999999999</h1>
+		<h1>555555555</h1>
+		<h1>252424242424</h1>
+		<h1>78787787878787</h1>
+		<h1>454542421212122</h1>
+		
+		<button class="btn">返回顶部</button>
+		
+		<script type="text/javascript">
+			var btn=document.querySelector(".btn")
+			
+
+			btn.onclick=function(){
+				//距离 scroll
+				var scroll=document.body.scrollTop
+				//总时间time
+				var time=20;
+				//步进值stp
+				var stp=scroll/20
+				
+				
+				var t=setInterval(function(){
+					if (scroll<=0) {
+						clearInterval(t)
+					} else{
+						console.log(scroll)
+						scroll-=stp;
+						document.body.scrollTop=scroll
+					}
+				},30)
+				
+			}
+			
+		</script>
+	</body>
+</html>
