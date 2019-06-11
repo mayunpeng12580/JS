@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="checkbox" name="check"/>篮球
+		<input type="checkbox" name="check"/>足球
+		<input type="checkbox" name="check"/>排球
+		<br />
+		<button class="all">全选</button>
+		<button class="no_all">全不选</button>
+		<button class="fan">反选</button>
+		
+		<script type="text/javascript">
+			var all=document.querySelector(".all")
+			var no_all=document.querySelector(".no_all")
+			var fan=document.querySelector(".fan")
+			var x=document.querySelectorAll("input")
+			
+			all.onclick=function(){
+				for (var i=0;i<x.length;i++) {
+					x[i].checked=true
+				}
+				
+			}
+			
+			no_all.onclick=function(){
+				for (var i=0;i<x.length;i++) {
+					x[i].checked=false
+				}
+				
+			}
+			
+			fan.onclick=function(){
+				for (var i=0;i<x.length;i++) {
+					if (x[i].checked) {
+						x[i].checked=false
+					} else{
+						x[i].checked=true
+					}
+				}
+				
+			}
+		</script>
+	</body>
+</html>
