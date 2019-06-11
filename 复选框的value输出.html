@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="checkbox" name="check" value="篮球"/>篮球
+		<input type="checkbox" name="check" value="足球"/>足球
+		<input type="checkbox" name="check" value="排球"/>排球
+		<br />
+		<button class="sure">提交订单</button>
+		<div class="text"></div>
+		<script type="text/javascript">
+			var sure=document.querySelector(".sure")
+			var x=document.querySelectorAll("input")
+			var text=document.querySelector(".text")
+
+			
+			sure.onclick=function(){
+				var a=""
+				
+				for (var i=0;i<x.length;i++) {
+					if (x[i].checked) {
+						a+=x[i].value+" "
+					}
+				}
+				document.querySelector(".text").innerText=a
+			}
+			
+			
+			
+			
+		</script>
+		
+	</body>
+</html>
