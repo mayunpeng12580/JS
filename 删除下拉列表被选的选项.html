@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<select>
+			<option>1</option>
+			<option>2</option>
+			<option>3</option>
+			<option>4</option>
+			<option>5</option>
+		</select>
+		<button class="btn">删除</button>
+		<script type="text/javascript">
+			var btn=document.querySelector(".btn")
+			var sel=document.querySelector("select")
+			
+			btn.onclick=function(){
+				console.log(sel.selectedIndex)
+				
+				sel.remove(sel.selectedIndex)
+				
+			}
+			
+		</script>
+	</body>
+</html>
