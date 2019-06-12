@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<select>
+			<option value="">张三</option>
+			<option value="">李四</option>
+			<option value="">王五</option>
+		</select>	
+		<div class="word"></div>
+		
+		<script type="text/javascript">
+			var sel=document.querySelector("select")
+			
+			sel.onchange=function(){
+				document.querySelector(".word").innerText="您选择的是"+sel.options[sel.selectedIndex].text
+			}
+			
+		</script>
+	</body>
+</html>
