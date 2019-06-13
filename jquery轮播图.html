@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="js/jquery-2.1.0.js" ></script>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+				list-style: none;
+			}
+			
+			.box{
+				width: 400px;
+				height: 300px;
+				border: 5px red solid;
+				position: relative;
+				overflow: hidden;
+			}
+			
+			.box ul{
+				position: absolute;
+				top: 0;
+				left: 0;
+			}
+			
+			.box ul li{
+				float: left;
+			}
+			
+			.box ul li img{
+				width: 400px;
+				height: 300px;
+			}
+			
+			.left, .right{
+				width: 100px;
+				height: 100px;
+				background-color: #8B0000;
+				opacity: 0.5;
+				position: absolute;
+				top: 100px;
+				left: 0px;
+				line-height: 100px;
+				text-align: center;
+				font-size: 50px;
+				z-index: 20;
+				cursor: pointer;
+				display: none;
+			}
+			
+			.right{
+				left: 300px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<div class="left">左</div>
+			<ul>
+				<li><img src="img/Jellyfish.jpg"/></li>
+				<li><img src="img/Koala.jpg"/></li>
+				<li><img src="img/Lighthouse.jpg"/></li>
+				<li><img src="img/Penguins.jpg"/></li>
+				<li><img src="img/Jellyfish.jpg"/></li>
+				<li><img src="img/Koala.jpg"/></li>
+				<li><img src="img/Lighthouse.jpg"/></li>
+				<li><img src="img/Penguins.jpg"/></li>
+			</ul>
+			<div class="right">右</div>
+		</div>
+		
+		<script type="text/javascript">
+			var count=$(".box ul li").length
+			var width=$(".box").width()
+			var ul=$(".box ul").width(count*width)
+			var index=0
+			
+			var t=setInterval(run,3000,[true])
+			
+			function run(flag){
+				if (flag) {
+					index=(index+1)%count
+				} else{
+					index=(index-1+count)%count
+				}
+				$(".box ul").css("left",width*index*-1+"px")
+				
+			}
+			
+			$(".box").hover(function(){
+				$(".left, .right").show()
+				clearInterval(t)
+			},function(){
+				$(".left, .right").hide()
+				t=setInterval(run,3000,true)
+			})
+			
+			$(".left").click(function(){
+				run(true)
+			})
+			
+			$(".right").click(function(){
+				run(false)
+			})
+		</script>
+	</body>
+</html>
