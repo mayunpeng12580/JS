@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="js/jquery-2.1.0.js" ></script>
+		<style type="text/css">
+			#box, .box{
+				width: 100px;
+				height: 200px;
+			}
+			.btn{
+				margin: 5px;
+			}
+		</style>
+	</head>
+	<body>
+		<select name="" id="box" multiple="multiple">
+			<option value="">选项1</option>
+			<option value="">选项2</option>
+			<option value="">选项3</option>
+			<option value="">选项4</option>
+			<option value="">选项5</option>
+			<option value="">选项6</option>
+			<option value="">选项7</option>
+		</select>
+		<select class="box" multiple="multiple"></select>
+		<br />
+		<button class="btn_1 btn">添加到右侧</button>
+		<button class="btn_2 btn">全部添加到右侧</button>
+		<br />
+		<button class="btn_3 btn">添加到左侧</button>
+		<button class="btn_4 btn">全部添加到左侧</button>
+		<script type="text/javascript">
+			$(".btn_1").click(function(){
+				$("#box option:selected").appendTo(".box")
+			})
+			$(".btn_2").click(function(){
+				$("#box option").appendTo(".box")
+			})
+			$(".btn_3").click(function(){
+				$(".box option:selected").appendTo("#box")
+			})
+			$(".btn_4").click(function(){
+				$(".box option").appendTo("#box")
+			})
+		</script>
+	</body>
+</html>
+
