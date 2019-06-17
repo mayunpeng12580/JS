@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="js/jquery-2.1.0.js"></script>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+				list-style: none;
+			}
+			h1{
+				width: 200px;
+				text-align: center;
+				padding: 10px;
+				background-color: #008000;
+				margin-top: 20px;
+				margin-left: 50px;
+				cursor: pointer;
+			}
+			ul{
+				margin-left: 50px;
+				width: 200px;
+				text-align: center;
+				padding: 10px;
+				background-color: #D2691E;
+				cursor: pointer;
+				border: 1px solid chartreuse;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>电影</h1>
+		<ul>
+			<li>《喜剧》</li>
+			<li>《惊悚》</li>
+			<li>《动作》</li>
+		</ul>
+		<h1>运动</h1>
+		<ul>
+			<li>足球</li>
+			<li>篮球</li>
+			<li>羽毛球</li>
+		</ul>
+		<script type="text/javascript">
+			$("h1").click(function(){
+				
+				if ($(this).next("ul").is(":visible")) {
+					$(this).css({
+						'border':'5px solid chartreuse',
+						"backgroundColor":"#008000",
+						'borderRadius':'0px',
+						});
+						console.log(111)
+				} else{
+					$(this).css({
+						'borderRadius':'15px',
+						"backgroundColor":"#999"
+						})
+						console.log(222)
+					
+				}
+				
+				$(this).next("ul").slideToggle("1000");
+			})
+			
+			
+		</script>
+	</body>
+</html>
