@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
+  </style>
+</head>
+<body>
+  <input type="text"><button class="btn">添加</button>
+  <ul>
+    <li>7:00 ss</li>
+    <li>8:30 44</li>
+  </ul>
+  <script src="js/jquery-2.1.0.js"></script>
+  <script>
+    $('.btn').on('click',function(){
+      var str = $('input').val();
+      $('ul').append('<li>'+str+'</li>');
+      $('input').val('');
+    })
+
+    $('ul').on('click',function(e){
+        console.log(e.target)
+        $(e.target).css({
+          'text-decoration': 'line-through'
+        })
+    })
+  </script>
+</body>
+</html>
